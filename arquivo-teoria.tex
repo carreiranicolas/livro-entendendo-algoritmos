@@ -1,0 +1,113 @@
+\documentclass{report}
+
+% Pacotes para acentuação e formatação
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{setspace}    % Para espaçamento
+\usepackage{lipsum}      % Texto de exemplo (remova se não precisar)
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Código}
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		
+		\centering
+		\vspace*{5cm} % Espaço do topo
+		
+		{\Huge\bfseries Entendendo Algoritmos\par} % Título
+		
+		\vspace{0.5cm}
+		
+		
+		\vfill
+		{\large Nicolas Ramos Carreira\par} % Nome
+		
+		\vspace*{2cm}
+	\end{titlepage}
+	
+	\tableofcontents
+	\newpage
+	
+	\setcounter{chapter}{-1}
+	
+	\chapter{Sobre o livro}
+	
+	O livro, em seu inicio, já destaca qual a sua ideia central, que é: Ser um livro de fácil leitura, que irá pegar conteúdos complexos e simplificar através das explicações,exemplos, ilustrações e prática ao longo do livro.O livro deixa claro que não aborda todos os algoritmos existentes, mas sim os mais importantes e considerado úteis pelo autor. 
+	
+	\section{Panorama geral dos capitulos}
+	
+	Os primeiros 3 capítulos do livro se constituirão no seguinte:
+	
+	\begin{itemize}
+		\item Capitulo 1: Aprenderemos o nosso primeiro algoritmo básico, a busca binária. Além disso, veremos como analisar a velocidade de um algoritmo utilizando a notação Big-O (que será utilizada ao longo do livro inteiro)
+		\item Capitulo 2: Aprenderemos duas estruturas de dados fundamentais, que são os arrays e listas encadeadas. Elas também são usadas na criação de estruturas de dados mais avançadas, como a tabela hash
+		\item Capitulo 3: Aprenderemos o uso da recursão, uma técnica muito útil utilizada em muitos algoritmos
+	\end{itemize}
+	
+	Os capitulos acima são os mais importantes (principalmente por conta da notação Big-O e da recursão), portanto, são os que o autor vai em ritmo mais lento.\\
+	
+	O restante do livro apresenta alguns algoritmos de aplicação mais ampla. Veja:
+	
+	\begin{itemize}
+		\item Tecnicas para resolução de problemas: Abordadas nos capítulos 4, 8, 9. São abordadas técnicas, como divisão e conquista (cap 4), programação dinamica (cap 9) e algoritmo guloso (cap 8) para problemas que não sabemos bem como resolvê-lo de forma eficiente.
+		\item Tabela Hash: É uma estrutura de dados muito útil que é abordada no capitulo 5
+		\item Algoritmos de grafos: Abordados nos capitulos 6 e 7, grafos são uma maneira de modelar uma rede. Veremos sobre a pesquisa em largura (cap 6) e algoritmo de Dijkstra (cap 7)
+		\item K-vizinhos mais próximos: Abordado no capitulo 7, essa é uma técnica simples de aprendizado de maquina. Podemos utiliza-la para criar recomendações de sistema, mecanismo OCR e até um sistema para prever valores (ou seja, tudo que envolve prever um valor).
+		\item Proximos passos: O capitulo 11 é discorrido sobre dez algoritmos que valem a pena uma leitura posterior (quando você ja estiver craque em algoritmos)
+	\end{itemize}
+	
+	\section{Como usar o livro}
+	
+	O autor se preocupou bastante com a ordem com que os assuntos seriam abordados, sendo assim, o ideal é que se leia os capitulos em ordem (eles se baseiam uns nos outros). \\
+	
+	Execute o código dos exemplos. Isso te fará reter melhor os conteúdos abordados. Você pode baixa-los no github através \href{github.com/egonschiele/grokking_algorithms}{DESTE LINK} (nesse repositório, o autor disponibilizou os códigos em várias linguagens, como C\#, Python, Ruby..). Uma observação é que os exemplos abordados utilizam Python como linguagem.\\
+	
+	Obviamente que é primordial que os exercicios passados sejam feitos. Eles nos ajudarão a conferir nosso pensamento (se estamos seguindo a linha de raciocinio correta ou não)\\
+	
+	\textbf{OBS}: Um detalhe é que EU, Nicolas, gostaria de deixar registrado a forma de estudo que eu usei para estudar o livro. Além de fazer o que foi falado acima, para os conteúdos teóricos, irei ler, entender e depois passar por escrito aqui para o LATEX
+	
+	\section{Quem deve ler o livro}
+	
+	É destinado a qualquer um que queira aprender sobre programação e imergir no mundo dos algoritmos
+	
+	\chapter{Introdução a algoritmos}
+	
+	\section{Introdução}
+	
+	\subsection{O que aprenderemos sobre desempenho}
+	
+	\subsection{O que aprenderemos sobre a solução de problemas}
+	
+	\section{Pesquisa binária}
+	
+	\subsection{Uma maneira melhor de buscar}
+	
+	\subsection{Tempo de execução}
+	
+	\section{Notação Big O}
+	
+	\subsection{Tempo de execução dos algoritmos cresce a taxas diferentes}
+	
+	\subsection{Vendo diferentes tempos de execução Big O}
+	
+	\subsection{A notação Big O estabelece o tempo de execução para a pior hipótese}
+	
+	\subsection{Alguns exemplos comuns de execução Big O}
+	
+	\subsection{O caixeiro-viajante}
+	
+	\section{Resumo do capítulo}
+	
+	\chapter{Ordenação por seleção}
+	
+	
+	
+	
+
+\end{document}

@@ -1,0 +1,29 @@
+# Arquivos temporários do LaTeX
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+*.synctex
+*.synctex.gz
+*.fdb_latexmk
+*.pdfsync
+*.xdv
+
+# Arquivos temporários de editor
+*.DS_Store
+*.tmp
+*~
