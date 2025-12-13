@@ -78,13 +78,33 @@
 	
 	\chapter{Introdução a algoritmos}
 	
+	Neste capítulo, aprenderemos:
+	
+	\begin{itemize}
+		\item Como fazer uma busca binária
+		\item Entender o uso da notação Big-O para analisar a velocidade de algoritmos 
+	\end{itemize}
+	
 	\section{Introdução}
 	
+	Um algoritmo é o conjunto de instruções para realizar determinada tarefa. Cada trecho de um código poderia ser um algoritmo, mas este livro se concentra nos mais importantes. Os algoritmos apresentados no livro foram escolhidos porque são rápidos ou porque resolver problemas interessantes. \\
+	
+	Em cada um dos casos, o autor irá descrever o algoritmo e apresentar um exemplo. Em seguida, será falado sobre o tempo de execução do algoritmo em notação Big-O. Por fim, serão explorados outros casos de uso (problemas) onde há aplicabilidade daquele algoritmo
+	
 	\subsection{O que aprenderemos sobre desempenho}
+	
+	Aprenderemos, principalmente, a comparar o desempenho de diferentes algoritmos. Exemplo: "Para este caso, devemos usar quicksort ou mergesort. Devemos usar uma lista encadeada ou um array?"
 	
 	\subsection{O que aprenderemos sobre a solução de problemas}
 	
 	\section{Pesquisa binária}
+	
+	Para entender, vamos a um exemplo: Suponhamos que tenhamos uma lista telefonica e queremos procurar um contato com a letra K, poderíamos começar foleando a lista até encontrar ou podemos começar do meio (ja que sabemos que não estará no começo) e partir dali.\\
+	
+	
+	Outro exemplo interessante é o Facebook. Suponhamos que o Facebook quer verificar se determinada conta existe. O nome da conta é Nicolas. Ele irá procurar no banco de dados. Poderia até começar do A, mas faz mais sentido começar a busca pelo meio.
+	
+	Todos os exemplos acima representam a aplicabilidade da busca binária. A busca binária é um algoritmo, onde passamos para ele uma lista de elementos (que deverá estar ordenada) e se o elemento buscado está na lista, será retornada a posição do elemento e caso contrário, será retornado None
 	
 	\subsection{Uma maneira melhor de buscar}
 	
