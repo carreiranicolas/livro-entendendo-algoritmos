@@ -102,11 +102,33 @@
 	Para entender, vamos a um exemplo: Suponhamos que tenhamos uma lista telefonica e queremos procurar um contato com a letra K, poderíamos começar foleando a lista até encontrar ou podemos começar do meio (ja que sabemos que não estará no começo) e partir dali.\\
 	
 	
-	Outro exemplo interessante é o Facebook. Suponhamos que o Facebook quer verificar se determinada conta existe. O nome da conta é Nicolas. Ele irá procurar no banco de dados. Poderia até começar do A, mas faz mais sentido começar a busca pelo meio.
+	Outro exemplo interessante é o Facebook. Suponhamos que o Facebook quer verificar se determinada conta existe. O nome da conta é Nicolas. Ele irá procurar no banco de dados. Poderia até começar do A, mas faz mais sentido começar a busca pelo meio. \\
 	
 	Todos os exemplos acima representam a aplicabilidade da busca binária. A busca binária é um algoritmo, onde passamos para ele uma lista de elementos (que deverá estar ordenada) e se o elemento buscado está na lista, será retornada a posição do elemento e caso contrário, será retornado None
 	
-	\subsection{Uma maneira melhor de buscar}
+	Um exemplo interessante para visualizarmos é: suponhamos que tivéssemos uma lista onde temos números de 1 a 100 e eu peço a alguem que tente acertar o numero que estou pensando (nesse caso 99), onde digo, a cada tentativa, se o número chutado está muito baixo ou muito alto. Uma maneira que a pessoa possa pensar para encontrar o número que estou pensando é chutar número a número começando do 1. Esse método se chama pesquisa simples (ou pesquisa estúpida como disse o autor). Essa é uma maneira pouco eficiente, sendo 99 o número que escolhi, a pessoa precisaria chutar 99 números para acertar. A cada chute, ela estaria eliminando apenas um número por vez dessa maneira.
+	
+	
+	\subsection{Uma maneira melhor de buscar (a pesquisa binária)}
+	
+	Dessa forma, uma maneira mais eficiente de acertar o número que estou pensando seria começar chutando do 50, assim, eu diria "muito baixo". Com isso, a pessoa eliminaria METADE dos números, pois ela saberia que os números de 1 a 50 são muito baixos. Aí depois, suponhamos que ela chute 75 e (como meu número é 99) eu fale "muito baixo". Ainda sim, ela eliminou uma quantidade considerável de valores. Isso continuaria, até que enfim meu número fosse encontrado. Essa maneira de pesquisar se chama pesquisa binária. \\
+	
+	Você percebe portanto que na pesquisa binária, a busca ocorre através dos valores intermediários,o que permite eliminar uma grande quantidade de valores a cada etapa \\
+	
+	Suponha agora que você esteja procurando uma palavra em um dicionário com 240.000 palavras. Na pior das hipóteses (a última palavra desse dicionário), em cada uma das formas de busca:
+	
+	\begin{itemize}
+		\item Pesquisa simples: 240.000 etapas
+		\item Pesquisa binária: 18 etapas, uma vez que a cada etapa eliminamos o número de palavras pela metade, até que sobre apenas uma palavra.
+	\end{itemize}
+	
+	Portanto, percebe-se uma grande diferença! Podemos dizer que a pesquisa binária, de maneira geral, para uma lista com n elementos, ela precisa de $\log_{2}n$ para retornar o valor correto, enquanto isso, a pesquisa simples precisaria de n etapas. Exemplo: em uma lista com 8 elementos, na pesquisa simples, precisariamos checar, em seu máximo, 8 elementos. Enquanto isso, na pesquisa binária, precisariamos, em seu máximo, checar $\log_{2}8$, 3 elementos \\
+	
+	
+	OBS: na notação Big O sempre quando falamos de $\log$, na verdade estamos nos referindo a $\log_{2}$
+	
+	Um detalhe 
+	
 	
 	\subsection{Tempo de execução}
 	
