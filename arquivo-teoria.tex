@@ -99,12 +99,12 @@
 	
 	\section{Pesquisa binária}
 	
-	Para entender, vamos a um exemplo: Suponhamos que tenhamos uma lista telefonica e queremos procurar um contato com a letra K, poderíamos começar foleando a lista até encontrar ou podemos começar do meio (ja que sabemos que não estará no começo) e partir dali.\\
+	Antes de tudo, vamos a um exemplo: Suponhamos que tenhamos uma lista telefonica e queremos procurar um contato com a letra K, poderíamos começar foleando a lista até encontrar ou podemos começar do meio (ja que sabemos que não estará no começo) e partir dali.\\
 	
 	
 	Outro exemplo interessante é o Facebook. Suponhamos que o Facebook quer verificar se determinada conta existe. O nome da conta é Nicolas. Ele irá procurar no banco de dados. Poderia até começar do A, mas faz mais sentido começar a busca pelo meio. \\
 	
-	Todos os exemplos acima representam a aplicabilidade da busca binária. A busca binária é um algoritmo, onde passamos para ele uma lista de elementos (que deverá estar ordenada) e se o elemento buscado está na lista, será retornada a posição do elemento e caso contrário, será retornado None
+	Todos os exemplos acima representam a aplicabilidade da busca binária. A busca binária é um algoritmo, onde passamos para ele uma lista de elementos (que deverá estar ordenada) e se o elemento buscado está na lista, será retornada a posição do elemento e caso contrário, será retornado None \\
 	
 	Um exemplo interessante para visualizarmos é: suponhamos que tivéssemos uma lista onde temos números de 1 a 100 e eu peço a alguem que tente acertar o numero que estou pensando (nesse caso 99), onde digo, a cada tentativa, se o número chutado está muito baixo ou muito alto. Uma maneira que a pessoa possa pensar para encontrar o número que estou pensando é chutar número a número começando do 1. Esse método se chama pesquisa simples (ou pesquisa estúpida como disse o autor). Essa é uma maneira pouco eficiente, sendo 99 o número que escolhi, a pessoa precisaria chutar 99 números para acertar. A cada chute, ela estaria eliminando apenas um número por vez dessa maneira.
 	
@@ -122,12 +122,74 @@
 		\item Pesquisa binária: 18 etapas, uma vez que a cada etapa eliminamos o número de palavras pela metade, até que sobre apenas uma palavra.
 	\end{itemize}
 	
-	Portanto, percebe-se uma grande diferença! Podemos dizer que a pesquisa binária, de maneira geral, para uma lista com n elementos, ela precisa de $\log_{2}n$ para retornar o valor correto, enquanto isso, a pesquisa simples precisaria de n etapas. Exemplo: em uma lista com 8 elementos, na pesquisa simples, precisariamos checar, em seu máximo, 8 elementos. Enquanto isso, na pesquisa binária, precisariamos, em seu máximo, checar $\log_{2}8$, 3 elementos \\
+	Portanto, percebe-se uma grande diferença! Podemos dizer que a pesquisa binária, de maneira geral, para uma lista com n elementos, ela precisa de $\log_{2}n$ para retornar o valor correto, enquanto isso, a pesquisa simples precisaria de n etapas. Exemplo: em uma lista com 8 elementos, na pesquisa simples, precisariamos checar, em seu máximo, 8 elementos. Enquanto isso, na pesquisa binária, precisariamos, em seu máximo, checar $\log_{2}8$, que seriam 3 elementos \\
 	
 	
-	OBS: na notação Big O sempre quando falamos de $\log$, na verdade estamos nos referindo a $\log_{2}$
+	OBS: na notação Big O sempre quando falamos de $\log$, na verdade estamos nos referindo a $\log_{2}$ \\
 	
-	Um detalhe 
+	Um detalhe que já chegamos a comentar é que para que a pesquisa binária ocorra, a nossa lista precisa estar ordenada.
+	
+	\subsubsection{Implementação da pesquisa binária}
+	
+	Agora, para conseguir visualizar melhor a pesquisa binária, realizaremos sua implementação. Faremos a implementação em um array. Teremos a função pesquisa\_binaria, que receberá um array ordenado e um valor. Se o valor estiver no array, será retornada sua posição. Caso contrário, será retornado None.\\
+	
+	No começo da nossa função pesquisa\_binaria, teremos:
+	
+	\begin{verbatim}
+		baixo = 0
+		alto = len(lista) - 1
+	\end{verbatim}
+	
+	Acima, acontece o mapeamento das posições do array, para assim conseguirmos pegar a posição intermediária. Após isso, teremos: 
+	
+		
+	\begin{verbatim}
+		meio = (baixo + alto) // 2
+		chute = lista[meio]
+	\end{verbatim}
+	
+	O que ele faz acima é encontrar o meio do nosso array e depois pegar o valor que temos no meio dele. Perceba que utilizamos o operador //, ou seja, estamos fazendo uma divisão inteira. Isso ocorre para que o valor "meio" seja arredondado para baixo caso (baixo + alto) não seja um valor par. A partir disso, temos:
+	
+	\begin{verbatim}
+		if chute < item:
+			baixo = meio + 1
+	\end{verbatim}
+	
+	Se o valor do primeiro chute for MENOR que o item que estamos procurando, então o valor "baixo" é atualizado para meio + 1. Isso acontece porque ele passa a desconsiderar todos os valores do antigo meio para baixo. O mesmo ocorre para caso o valor do primeiro chute for MAIOR que o item que estamos procurando:
+	
+	\begin{verbatim}
+		if chute > item:
+			alto = meio - 1
+	\end{verbatim}
+	
+	O que acontece acima é que se o valor do chute for maior que o item que estamos procurando, o valor "alto" é atualizado, pois ele passa a desconsiderar todos os valores do antigo meio para cima \\
+	
+	
+	Agora veja o código completo abaixo:
+	
+	\begin{verbatim}
+		def pesquisa_binaria(lista, item):
+		baixo = 0
+		alto = len(lista) - 1
+		
+		while baixo <= alto:
+			meio = (baixo + alto)//2
+			chute = lista[meio]
+			
+			if chute == item:
+				return meio
+			
+			if chute > item:
+				alto = meio - 1
+			
+			else:
+				baixo = meio + 1
+		
+		return None
+	\end{verbatim}
+	
+	Veja abaixo visualmente o algoritmos para ter um melhor entendimento. Usaremos como exemplo a lista: [1, 3, 5, 7, 9], onde tentaremos buscar o valor 3.
+	
 	
 	
 	\subsection{Tempo de execução}
