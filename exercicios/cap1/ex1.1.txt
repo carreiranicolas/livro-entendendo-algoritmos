@@ -1,0 +1,5 @@
+Suponha que você tenha uma lista com 128 nomes e esteja fazendo uma pesquisa binária. Qual seria o número máximo de etapas que
+você levaria para encontrar o nome desejado
+
+R: Sabendo que o nosso valor de n é 128 e também tendo o contexto que a o número máximo de etapas de uma pesquisa binária é
+medido por log2(n), teríamos log2(128) = 7. Uma observação é que se após 7 etapas, o elemento não estiver na lista, é feita uma etapa adicional onde se faz uma 8ª comparação para confirmar que a lista "acabou" e o nome não foi encontrado.
