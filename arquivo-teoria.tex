@@ -188,7 +188,51 @@
 		return None
 	\end{verbatim}
 	
-	Veja abaixo visualmente o algoritmos para ter um melhor entendimento. Usaremos como exemplo a lista: [1, 3, 5, 7, 9], onde tentaremos buscar o valor 3.
+	Agora, suponhamos que tenhamos a lista [1, 3, 5, 7, 9], onde tentaremos buscar o valor 3. Com base no código, acima, o que aconteceria seria o seguinte:
+	
+	\begin{enumerate}
+		\item Em \begin{verbatim}
+			baixo = 0
+			alto = len(lista) - 1 
+		\end{verbatim}a variavel "baixo" iria ser definida como 0 e a variavel "alto" seria definida como 4 (indice final do array). Essas duas variaveis acompanham a parte da lista que estamos procurando
+		
+		\item Após isso, temos: \begin{verbatim}
+			while baixo <= alto:
+				meio = (baixo + alto) // 2
+				chute = lista[meio]
+		\end{verbatim} onde enquanto ele não terminar a busca em toda a lista, ele irá verificar o elemento central. No nosso caso, o valor de meio inicialmente será 2 (resultado da divisão por 2 de 0 + 4) e portanto, nosso chute será 5.
+		
+		\item Como o chute verificado não é igual a 3 (nosso item) e é maior que o valor do item, ele partirá a segunda condição onde: \begin{verbatim}
+			if chute > item:
+				alto = meio - 1
+		\end{verbatim}
+		com isso, todos os valores de 5 em diante da nossa lista (5, 7, 9) serão desconsiderados, pois o valor da nossa varíavel alto passará a ser 1 (ou seja, o indice 1 da nossa lista, que tem 3 como valor). 
+		
+		\item Depois disso, voltaríamos ao nosso while (uma vez que temos a nossa variavel "baixo" como 0 e nossa variavel "alto" como 1)\begin{verbatim}
+			while baixo <= alto:
+				meio = (baixo + alto) // 2
+				chute = lista[meio]
+		\end{verbatim} A partir disso, nosso meio será igual a 0, pois (0 + 1)/2 é igual a 0.5, mas como é arredondado para baixo, será igual a 0. Sendo assim, nosso chute será igual a 1.
+		
+		\item Como nosso chute não é igual ao valor do item (3) e é menor que o valor do item, ele partirá para a terceira condição, onde:\begin{verbatim}
+			else:
+				baixo = meio + 1
+		\end{verbatim} com isso, o valor da nossa variavel baixo passará a ser 1, pois o meio era 0.
+		
+		\item Com isso, voltaríamos ao while pois a condição ainda é atendida (variavel "baixo" é 1 e variavel "alto" é 1, então 1 <= 1)\begin{verbatim}
+			while baixo <= alto:
+				meio = (baixo + alto) // 2
+				chute = lista[meio]
+		\end{verbatim} nosso meio agora passará a ser 1 (pois (1 + 1) // 2 é igual a 1) e então nosso chute será o valor 3
+		
+		\item Agora, como nosso chute é igual ao item (3), ele entra na primeira condição e retorna o valor a variavel meio (que é, no caso, o índice do valor do chute), encerrando a função e a busca\begin{verbatim}
+			if chute == item:
+				return meio
+		\end{verbatim}
+		
+	\end{enumerate}
+	
+	Caso queira ver e testar por si só, basta acessar o código do algoritmo \href{URL}{NESTE LINK}
 	
 	
 	
@@ -205,6 +249,27 @@
 	A notação Big O é uma notação especial que diz o quão rápido é um algoritmo. A importancia dele é que frequentemente estaremos utilizando algorítmos de outras pessoas e quando fazemos isso, é importante entender o quão rápido ou lento esse algoritmo é.
 	
 	\subsection{Tempo de execução dos algoritmos cresce a taxas diferentes}
+	
+	Suponhamos que temos um problema onde podemos implementar o algoritmo de pesquisa simples e pesquisa binária para uma lista com 100 elementos. \\
+	
+	Implementando a pesquisa simples para a lista de 100 elementos, suponhamos que levamos 100ms. Enquanto isso, a pesquisa binária, para a mesma lista de 100 elementos, poderia levar 7ms aproximadamente. \\
+	
+	Você pode pensar: puxa, a pesquisa binária é cerca de 15 vezes mais rápida que a pesquisa simples, então para um problema onde tenho uma lista de 1 bilhão de elementos, se a pesquisa binária demorar 30ms, então a pesquisa simples demoraria 15 * 30ms = 450ms, correto? \\
+	
+	Não. Na verdade, está completamente errado. Isso acontece porque o tempo de execução da pesquisa simples e binária crescem com taxas diferentes. Veja a imagem abaixo:
+	
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=8cm]{imagens/C1_crescimento_tempo_execucao.jpg}
+	\end{figure}
+	
+	Portanto, perceba que conforme o número de elementos na lista cresce, a pesquisa binária aumenta só um pouco o seu tempo de execução. Por outro lado, a pesquisa simples irá levar muito tempo a mais. \\
+	
+	Dessa forma, não basta saber quanto tempo um algoritmo leva para ser executado, é necessário saber se o tempo de execução aumenta conforme a lista aumenta. É ai que entra a notação Big O. \\
+	
+	A notação Big O não utiliza segundos para medir quão rápido é um algoritmo, ela informa o número de operações, permitindo que você veja o quão rapidamente um algoritmo cresce. Nas pesquisa simples, por exemplo, para uma lista com n elementos, teremos um Big O(n), assim, se temos 100 elementos, temos O(100), se temos 10000 elementos, temos um O(10000). Isso é muito menos propenso a erros do que o modo anterior onde olhávamos os segundos (e eu mostrei que poderia haver confusões) \\
+	
+	Sendo assim a notação Big O nos mostra o número de operações que um algoritmo realiza. É chamado de Big O porque coloca-se um grande O na frente do número de operações
 	
 	\subsection{Vendo diferentes tempos de execução Big O}
 	
