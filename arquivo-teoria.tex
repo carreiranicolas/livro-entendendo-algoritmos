@@ -273,6 +273,21 @@
 	
 	\subsection{Vendo diferentes tempos de execução Big O}
 	
+	Falaremos agora de um exemplo prático abordado pelo livro para visualizar diferentes tipos de execução Big-O. \\
+	
+	O exemplo é basicamente pegar uma folha de papel e formar nela 16 quadrados. Poderíamos fazer isso de duas formas:
+	
+	\begin{enumerate}
+		\item Pegar um lápis e fazer quadrado a quadrado.
+		\item Fazer dobras com o papel para que quando desdobrassemos, estivessem os 16 quadrados nele formados pelas dobras
+	\end{enumerate}
+	
+	Olhando as duas formas de fazer isso e considerando que o Big-O mede o número de operações, podemos ver que a primeira forma resultaria em um número grande de operações, mais precisamente 16 operações. Enquanto isso, a segunda forma levaria 4 dobras, ou seja, 4 operações \\ 
+	
+	Dessa forma, podemos dizer que da primeira maneira o Big-O desse "algoritmo" é O(n), pois teríamos que fazer quadrado a quadrado.\\
+	
+	Por outro lado, fazendo da segunda maneira, podemos dizer que temos um "algoritmo" de O($\log_{2}n$), uma vez que para 16 quadrados, teríamos 4 operações.
+	
 	\subsection{A notação Big O estabelece o tempo de execução para a pior hipótese}
 	
 	\subsection{Alguns exemplos comuns de execução Big O}
