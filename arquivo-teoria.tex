@@ -290,10 +290,52 @@
 	
 	\subsection{A notação Big O estabelece o tempo de execução para a pior hipótese}
 	
+	Suponhamos que nós estamos utilizando a pesquisa simples para procurar um nome em uma lista telefonica. sabemos que a pesquisa simples tem um tempo de execução de O($n$), ou seja, no pior caso, teríamos que percorrer a lista inteira. Agora suponha que o contato que estamos buscando tem o nome "Ana" e é o primeiro contato da lista. Nós teríamos um tempo de execução de O($n$) ou O(1)? \\
+	
+	Justamente para que não haja essa ambiguidade, a notação Big O mede o tempo de execução a partir da pior hipótese. Olhar para o pior caso é uma garantia, você sabe que não terá tempo de execução mais lento que O(n) para a pesquisa simples, por exemplo \\
+	
+	
+	OBS: analisar o caso médio também é interessante. Será discutido no livro mais afrente
+	
 	\subsection{Alguns exemplos comuns de execução Big O}
+	
+	Abaixo, teremos cinco exemplos de execução Big O que encontraremos ao longo do livro e até ao longo de nossa vida. Eles estão ordenados do mais rápido para o mais lento:
+	
+	\begin{itemize}
+		\item O($\log_{2}n$): Também conhecido como tempo logarítmico. Exemplo: pesquisa binária
+		\item O($n$): conhecido como tempo linear. Exemplo: pesquisa simples
+		\item O($n * \log_{2}n$): Um exemplo é o algoritmo rápido de ordenação quicksort que usa essa notação
+		\item O($n^2$): Podemos citar como exemplo o algoritmo lento de ordenação, como a ordenação por seleção
+		\item O($n!$): Temos o exemplo do algoritmo bem lento caixeiro-viajante
+	\end{itemize}
+	
+	Além desses tempo de execução Big-O, existem outros, mas os que foram abordados são os mais comuns.
+	
+	Sendo assim, os principais pontos sobre BIg-O são:
+	
+	\begin{itemize}
+		\item A rapidez de um algoritmo não é medida em segundos, mas sim pelo crescimento do número de operações
+		\item Um O($\log_{2}n$) é mais rápido que o O($n$) e fica ainda mais rápido conforme a lista aumenta
+	\end{itemize}
 	
 	\subsection{O caixeiro-viajante}
 	
+	Aqui temos um exemplo de algoritmo com o tempo de execução muito ruim. Estamos tratando de um problema clássico da ciência da computação, pois seu crescimento é apavorante e muitos estudiosos acreditam que seja impossível de melhorá-lo. Vamos a ele: \\
+	
+	
+	Nós temos um caixeiro-viajante que precisa ir a 5 cidades suponhamos. \\ 
+	
+	
+	Ele precisa passar por todas as cidades percorrendo a distância minima. Com isso, existem algumas ordens de cidades para visitar. Para 5 cidades, existem 120 permutações possíveis (ou seja, 120 ordens de cidades possíveis)
+	
+	
+	Logo, precisamos de 120 operações para resolver o problema das cinco cidades (calcular e comparar). Para seis cidades, precisariamos de 720 operações (ou 720 permutações), para sete 5050 e por aí vai. \\
+	
+	
+	
+	Com isso, para $n$ itens, precisaríamos de $n!$ operações para chegar ao resultado, sendo então o tempo de execução um O($n!$), assim como tinhamos visto. O que acontece é que a partir de um número de cidades (100 cidades, por exemplo), é IMPOSSIVEL calcular a resposta em função do tempo (são MUITAS operaçoes) \\
+	
+	Aí fica a pergunta: mas não tem como usar outro algoritmo para isso? Não, pois esse problema não tem solução, não existe um algoritmo mais rápido para esse problema e estudiosos acreditam que não existe maneiras de melhorá-lo. O que se pode fazer é encontrar uma solução aproximada que veremos no capítulo 10 do livro.
 	\section{Resumo do capítulo}
 	
 	\chapter{Ordenação por seleção}
