@@ -1,4 +1,5 @@
-Suponhamos que temos uma lista de 256 elementos. QUal seria o número maximo de etapas?
+Forneça o Big O
 
-R: O número máximo de etapas, considerando que nosso n é 256 e que a pesquisa binária calcula as etapas a partir de log2(n), é
-log2(256) = 8. Sendo assim, o número máximo de etapas seria 8.
+Você quer ler o número de cada pessoa da agenda telefônica
+
+R: Esse caso, é um claro O(n), pois estamos lendo todos os números da agenda telefônica
