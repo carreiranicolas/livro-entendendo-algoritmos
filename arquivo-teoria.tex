@@ -387,11 +387,33 @@
 		\includegraphics[width=6cm]{imagens/C2_memoria_enderecos.jpg}
 	\end{center}
 	
-	Cada vez que você precisa armazenar um item na memória, você pede ao computador espaço e ele te dá um endereço onde você pode armazenar aquele item. Se você quiser armazenar múltiplos itens, poderá fazer de duas maneiras: utilizando arrays e listas
-	
+	Cada vez que você precisa armazenar um item na memória, você pede ao computador espaço e ele te dá um endereço onde você pode armazenar aquele item. 
 	
 	
 	\section{Arrays e listas encadeadas}
+	
+	As vezes pode acontecer de querermos armazenar múltiplos itens na memória. Suponha que você esteja fazendo um app de tarefas, você precisará armazenar as tarefas como se fosse uma lista na memória. Podemos fazer de duas formas: usando arrays e listas encadeadas. \\
+	
+	Usando um array, significa que todas as nossas tarefas ficam armazenadas contiguamente, ou seja, cada tarefa é armazenada uma ao lado da outra na memória, assim como podemos ver na imagem abaixo.
+	
+	\begin{center}
+		\includegraphics[width=6cm]{imagens/C2_memoria_contigua}
+	\end{center}
+	
+	
+	O problema disso é que, olhando a imagem acima, por exemplo, se depois de "Chá", quisermos armazenar outra tarefa na memória, não conseguiremos, pois já está ocupada. É como se você fosse ao cinema com seus amigos e sentassem um ao lado do outro e um outro amigo chegasse de última hora, mas não conseguisse sentar ao lado de vocês por estar ocupado. \\
+	
+	Seria então necessário solicitar ao computador uma área de memória em que coubessem todas as tarefas contiguamente. A questão é que essa situação poderia acontecer novamente, o que pode tornar a adição de itens no array um processo muito lento. \\
+	
+	Com isso, uma maneira relativamente simples de resolver isso é: "reservar lugares". Mesmo que você tenha três itens na lista de tarefas, você pode solicitar ao computador dez espaços, só por via das dúvidas. Dessa forma, você consegue adicionar 10 elementos a sua lista sem precisar mover nada, mas ainda existem desvantagens:
+	
+	\begin{itemize}
+		\item Você pode não precisar dos espaços extras que reservou, então a memória seria desperdiçada
+		\item Você pode ter que utilizar mais de dez espaços, então aquela situação voltaria a acontecer
+	\end{itemize}
+	
+	Dessa forma, apesar de ser uma maneira de contornar o problema, não é uma solução perfeita. O ideal seria resolver isso com listas encadeadas
+	
 	\subsection{Listas encadeadas}
 	\subsection{Arrays}
 	\subsection{Terminologia}
