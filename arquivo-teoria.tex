@@ -415,7 +415,26 @@
 	Dessa forma, apesar de ser uma maneira de contornar o problema, não é uma solução perfeita. O ideal seria resolver isso com listas encadeadas
 	
 	\subsection{Listas encadeadas}
+	
+	Nas listas encadeadas, seus itens podem estar em qualquer lugar da memória. Como cada item armazena o endereço do próximo item da lista, eles não precisam estar contíguos, eles ficam espalhados. Veja a imagem abaixo:
+	
+	
+	Uma analogia que pode ser feita é com uma caça aos tesouros. Você vai primeiro em endereço x ele diz que o próximo item pode ser encontrado no endereço y \\
+	
+	Adicionar elementos em uma lista encadeada é algo bem simples. Você basicamente coloca em qualquer lugar da memoria e armazena o endereço do item anterior. \\
+	
+	Uma coisa interessante é que com as listas encadeadas você não tem o problema de ter que mover os itens. Além disso, evitamos outro problema onde suponhamos que estamos tentando encontrar 10.000 slots da memória pra um array. Se sua memória tem os 10.000 slots, mas eles não estão juntos, você não consegue arrumar um lugar para o seu array, o que definitivamente não seria um problema, pois ele espalharia os 10.000 itens pela memória \\
+	
+	Agora, fica uma questão, se as listas encadeadas são melhores em inserções, para que usar arrays? \\
+	
+	A questão é que as listas encadeadas ainda tem limitações. Suponhamos que você queira ler o último item de uma lista encadeada, você deverá passar pelo primeiro item, para pegar o endereço para o item dois e ir para ele e assim consecutivamente, até ir para o último. Quando falamos de arrays, já não temos essa limitação
+	
+	
+	
 	\subsection{Arrays}
+	
+	Nos arrays, você sabe o endereço de cada item, então você não tem a limitação que as listas encadeadas tem. Se você tem um array com cinco itens, sabe que o primeiro está no endereço 00 e quer acessar o último elemento, qual seria o endereço? Seria o endereço 04. Dessa forma, arrays são ótimos se você deseja encontrar elementos aleatórios, pois pode encontrar qualquer elemento instanteneamente com array
+	
 	\subsection{Terminologia}
 	\subsection{Inserindo algo no meio da lista}
 	\subsection{Deleções}
