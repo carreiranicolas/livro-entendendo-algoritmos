@@ -418,6 +418,9 @@
 	
 	Nas listas encadeadas, seus itens podem estar em qualquer lugar da memória. Como cada item armazena o endereço do próximo item da lista, eles não precisam estar contíguos, eles ficam espalhados. Veja a imagem abaixo:
 	
+	\begin{center}
+		\includegraphics[width=6cm]{imagens/C2_lista_encadeada.jpg}
+	\end{center}
 	
 	Uma analogia que pode ser feita é com uma caça aos tesouros. Você vai primeiro em endereço x ele diz que o próximo item pode ser encontrado no endereço y \\
 	
@@ -435,7 +438,21 @@
 	
 	Nos arrays, você sabe o endereço de cada item, então você não tem a limitação que as listas encadeadas tem. Se você tem um array com cinco itens, sabe que o primeiro está no endereço 00 e quer acessar o último elemento, qual seria o endereço? Seria o endereço 04. Dessa forma, arrays são ótimos se você deseja encontrar elementos aleatórios, pois pode encontrar qualquer elemento instanteneamente com array
 	
-	\subsection{Terminologia}
+	\begin{center}
+		\includegraphics[width=6cm]{imagens/C2_arrays.jpg}
+	\end{center}
+	
+	\subsection{Terminologia e alguns detalhes}
+	
+	Algo que pode ter passado despercebido é a a numeração do array começando do 0. Isso é uma convenção que é utilizada em todas as linguagens de programação. Além disso, um detalhe importante de se pontuar é que ao invés de dizer "o número x está na posição 1 do array", seguiremos a terminologia correta e diremos: "o número x está no ÍNDICE 1 do array". Logo, posição = índice. O livro usará essa terminologia o tempo todo a partir de agora \\ 
+	
+	Outro detalhe importante de se citar é o comparativo em relação ao tempo de execução das operações básicas (leitura e inserção) de arrays e listas. Esse tópico será abordado com mais profundidade em breve (ainda neste capítulo), porém é importante ter uma ideia disso, pois é utilizado para realizar o exercicio 2.1 do livro. Desta forma, fique com a imagem abaixo:
+	
+	\begin{center}
+		\includegraphics[width=6cm]{imagens/C2_comparativo_basico_arrays_listas.jpg}
+	\end{center}
+
+	
 	\subsection{Inserindo algo no meio da lista}
 	\subsection{Deleções}
 	\section{Ordenação por seleção}

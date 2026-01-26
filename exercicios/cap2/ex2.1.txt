@@ -1,0 +1,6 @@
+Suponha que você esteja criando um app para acompanhar suas finanças. Todos os dias você anotará tudo que gastou e onde gastou.
+No final do mês, você deverá revisar os seus gastos e resumir o quanto gastou. Logo, você terá um monte de inserções e poucas 
+leituras. Você deverá usar um array ou uma lista para implementar esse aplicativo.
+
+
+R: Bom, considerando o contexto dado (de muitas inserções e poucas leituras) e conforme a imagem C2_comparativo_basico_arrays_listas, a escolha ideal para implementar esse app seria uma lista, pois as inserções tem um tempo de execução de O(1) na operação de inserção nas listas, enquanto os arrays tem um tempo de execução de O(n) em suas inserções e sendo a inserção a operação mais usada nesse app, fica óbvia a escolha pelas listas
