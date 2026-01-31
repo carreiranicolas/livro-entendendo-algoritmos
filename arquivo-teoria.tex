@@ -454,6 +454,35 @@
 
 	
 	\subsection{Inserindo algo no meio da lista}
+	
+	Suponha que você tem uma lista de tarefas assim como abordamos nos exemplos anteriores, mas agora você quer colocar as tarefas na ordem em que elas serão feitas \\
+	
+	Se você quiser inserir um elemento no meio da sua lista, o que seria melhor arrays ou listas encadeadas?
+	
+	\subsubsection{Em listas encadeadas}
+	
+	Em listas encadeadas, bastaria mudar o endereço para qual o elemento anterior está apontando, para que ele passe a apontar para o novo elemento que você adicionou. Veja a imagem de exemplo abaixo:
+	
+	\begin{center}
+		\includegraphics[width=7cm]{imagens/C2_lista_encadeada_tarefas_insercao}
+	\end{center}
+	
+	
+	Note que antes, "Beber chá" vinha logo depois de "Jogar bocha" (ou seja, jogar bocha apontava para beber cha), mas com a adição de "Comprar chá", houve uma modificação e "Jogar Bocha" passou a apontar para "Comprar chá"
+	
+	\subsubsection{Em arrays}
+	
+	Nos arrays, ao inserir um elemento no meio dele, precisamos mover todos os itens que estão a partir do endereço de inserção. Veja a imagem abaixo:
+	
+	\begin{center}
+		\includegraphics[width=7cm]{imagens/C2_arrays_tarefas_insercao}
+	\end{center}
+	
+	Suponhamos que o elemento "Café da manhã" seja indice 0, "Jogar bocha" indice 1 e "Beber cha" indice 2. A partir disso, conforme a imagem mostra, vamos dizer que queremos inserir "Comprar chá" no indice 2, no lugar de "Beber chá". O que aconteceria é que "Beber chá" teria que ser movido para a dar lugar a "Comprar chá" \\
+	
+	
+	O problema disso tudo é que se não houver espaço, pode ser necessário mover tudo para um novo local na memória. Por isso, listas encadeadas acabam levando vantajem caso você queira inserir um elemento no meio de uma lista
+	
 	\subsection{Deleções}
 	\section{Ordenação por seleção}
 	\section{Recapitulando}
