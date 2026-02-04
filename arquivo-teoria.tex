@@ -446,7 +446,7 @@
 	
 	Algo que pode ter passado despercebido é a a numeração do array começando do 0. Isso é uma convenção que é utilizada em todas as linguagens de programação. Além disso, um detalhe importante de se pontuar é que ao invés de dizer "o número x está na posição 1 do array", seguiremos a terminologia correta e diremos: "o número x está no ÍNDICE 1 do array". Logo, posição = índice. O livro usará essa terminologia o tempo todo a partir de agora \\ 
 	
-	Outro detalhe importante de se citar é o comparativo em relação ao tempo de execução das operações básicas (leitura e inserção) de arrays e listas. Esse tópico será abordado com mais profundidade em breve (ainda neste capítulo), porém é importante ter uma ideia disso, pois é utilizado para realizar o exercicio 2.1 do livro. Desta forma, fique com a imagem abaixo:
+	Agora, um detalhe importante de se citar é o comparativo em relação ao tempo de execução das operações básicas (leitura e inserção) de arrays e listas. Esse tópico será abordado com mais profundidade em breve (ainda neste capítulo), porém é importante ter uma ideia disso, pois é utilizado para realizar o exercicio 2.1 do livro. Desta forma, fique com a imagem abaixo:
 	
 	\begin{center}
 		\includegraphics[width=6cm]{imagens/C2_comparativo_basico_arrays_listas.jpg}
@@ -484,6 +484,42 @@
 	O problema disso tudo é que se não houver espaço, pode ser necessário mover tudo para um novo local na memória. Por isso, listas encadeadas acabam levando vantajem caso você queira inserir um elemento no meio de uma lista
 	
 	\subsection{Deleções}
+	
+	Já falamos sobre a inserção de elementos, mas e na deleção de elementos? Na deleção de elementos, a conclusão é a mesma, as listas encadeadas levam vantajem. Vamos investigar cada um dos casos:
+	
+	\subsubsection{Em listas encadeadas}
+	
+	Nas listas encadeadas, quando realizamos uma deleção, bastaria mudar o endereço para qual o elemento anterior está apontando. Exemplo:
+	
+	\begin{center}
+		\begin{LARGE}
+			Jogar -> Café -> Dormir
+		\end{LARGE}
+	\end{center}
+	
+	Se nós eliminarmos o "Café", a única coisa que teríamos que fazer é mudar para onde "Jogar" está apontando, para que aponte corretamente para "Dormir"
+
+	\subsubsection{Em arrays}
+	
+	Nos array, quando um elemento é deletado, tudo a partir dele precisa ser movido. Exemplo:
+	
+	\begin{center}
+		\begin{LARGE}
+			SP, ES, RJ, MG
+		\end{LARGE}
+	\end{center}
+	
+	Acima, vamos dizer que "SP" tenha o índice 0, "ES" tenha o índice 1, "RJ" tenha o índice 2 e "MG" tenha o índice 3. Se removermos do array o elemento "ES", precisaremos mover "RJ" para o índice 1 (que pertencia a "ES") e depois "MG" para o índice 2. Ou seja, tivemos que mover os elementos a partir de "ES".\\
+	
+	O único detalhe é que a deleção sempre funcionará, diferente da inserção que como vimos poderá falhar caso haja espaço suficiente na memória.
+	
+	\subsection{Tempo execucao: lista x array}
+	
+	Chegamos a abordar em ... um comparativo do tempo de execução em arrays e listas para as operações de leitura e inserção. Agora, após ter visto a operação de deleção, teremos o quadro de comparativo de tempo de execução nas operações básicas de arrays e listas completo. Veja abaixo:
+	
+	
+	É importante mencionar que..
+	
 	\section{Ordenação por seleção}
 	\section{Recapitulando}
 	
