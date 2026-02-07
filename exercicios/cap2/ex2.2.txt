@@ -1,0 +1,10 @@
+Suponha que você esteja criando um aplicativo para anotar os pedidos dos clientes em um restaurante. Seu aplicativo
+precisa de uma lista de pedidos. Os garçons adicionam os pedidos ao começo dessa lista e os chefes retiram o pedido 
+o pedido conforme a ordem que vem para cozinhá-los. Você usaria um array ou uma lista encadeada para implementar essa 
+lista? 
+
+R: Considerando a tabela de tempo de execução para operações básicas, as listas encadeadas acabam levando vantagem,
+pois normalmente tem um tempo de execução de O(1) tanto para inserção quanto para eliminação de elementos, então eu
+utilizaria as listas. Outro ponto é que o garçom está o tempo todo adicionando pedidos ao começo da lista de pedidos.
+Isso para a implementação em array seria muito ruim, pois teríamos que ficar movendo o tempo todo os elementos posteriores.
+Por fim, outro ponto é que se tivermos MUITOS pedidos, pode ter a situação onde não temos mais espaços contiguos na memória.

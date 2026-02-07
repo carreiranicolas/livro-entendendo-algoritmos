@@ -1,0 +1,11 @@
+As pessoas se inscrevem no Facebook com muita frequência. Suponha que você decida usar um array para armazenar a lista de
+usuários. Quais as desvantagens de um array com relação às inserções? Em particular, imagine que você está usando a 
+pesquisa binária para buscar os logins. O que acontece quando você adiciona novos usuários em um array?
+
+
+R: A desvantagem com os arrays com relação à inserção é o fato de que as vezes pode ser que faltem o espaço para alocar
+aquela quantidade de elementos contiguamente na memória, então todos os elementos precisariam de ser movidos. Além disso,
+também tem o fato que dependendo de onde você adiciona o elemento, você terá que mover todos os outros elementos e neste 
+caso, isso aconteceria, pois como ele utiliza a pesquisa binária para buscar os logins, ele tem que deixar o array ordenado
+então na inserção o elemento seria adicionado no meio do array, por exemplo, o que faria com que houvesse uma movimentação de
+elementos.

@@ -1,0 +1,9 @@
+Vamos analisar um experimento. Digamos que o Facebook guarda um lista de usuário. Quando alguém tenta acessar o Facebook,
+a busca é feita pelo nome do usuário. Se o nome da pessoa está na lista, ela pode continuar o acesso. As pessoas acessam
+o Facebook com muita frequência, então existem muitas buscas nessa lista. Presuma que o Facebook use a pesquisa binária 
+para procurar um nome na lista. A pesquisa binária requer acesso aleatório, ou seja, você precisa ser capaz de de acessar
+o meio da lista de nomes instantaneamente. Sabendo disso, você implementaria como array ou lista encadeada?
+
+R: Eu faria essa implementação por array, pois sabendo que nas listas encadeadas, para ter acesso ao meio dela, eu teria
+que realizar uma iteração até o meio dessa lista e no array eu posso simplesmente calcular qual é o meio dele e acessá-lo
+diretamente, o que seria algo bem mais rápido

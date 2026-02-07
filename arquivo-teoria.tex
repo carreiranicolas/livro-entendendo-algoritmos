@@ -517,10 +517,48 @@
 	
 	Chegamos a abordar em ... um comparativo do tempo de execução em arrays e listas para as operações de leitura e inserção. Agora, após ter visto a operação de deleção, teremos o quadro de comparativo de tempo de execução nas operações básicas de arrays e listas completo. Veja abaixo:
 	
+	\begin{center}
+		\includegraphics[width=6cm]{imagens/C2_execucao-operacoes-lista-array.png}
+	\end{center}
 	
-	É importante mencionar que..
+	É importante mencionar que as inserções e deleções em listas encadeadas só terão tempo de execução O(1) se você puder acessar instantaneamente o elemento que você irá deletar, pois se não precisamos iterar a lista encadeada para realizar a deleção. Por isso, é uma prática comum acompanhar o primeiro e o último elemento de uma lista encadeada, para fazer que o tempo de execução para inserir ou deletar seja O(1) \\
+	
+	Outro detalhe é que a inserção e eliminação em arrays aparece como O(n) mesmo tendo leitura em O(1) pelo motivo que falamos anteriormente onde se adicionarmos um elemento (ou tirarmos) do meio do array, teremos que mover os outros itens após esse elemento
 	
 	\section{Ordenação por seleção}
+	
+	Agora, aprenderemos o nosso segundo algoritmo: ordenação por seleção. Algoritmos de ordenação são muito úteis, podemos ordenar nomes em uma agenda telefonica, datas e etc..Vamos a ele \\
+	
+	Suponha que você tem uma lista com vários artistas no seu computador. Para cada um deles, você tem um contador de plays, que conta quantas vezes você tocou uma música daquele artista. Veja a imagem abaixo:
+	
+	\begin{center}
+		\includegraphics[width=6cm]{imagens/C2_lista_musicas}
+	\end{center}
+	
+	
+	A partir disso, você quer ordenar uma lista de artistas, do mais tocado para o menos tocado, para categorizar assim os seus artistas prediletos. Como podemos fazer isso? Uma forma seria pegar o artista mais tocada da lista de músicas e adicioná-lo a uma nova lista. Veja um exemplo:
+	
+	\begin{center}
+		\includegraphics[width=6cm]{imagens/C2_ordenacao_selecao_musicas}
+	\end{center}
+	
+	
+	Isso deve ser feito repetidas vezes, até que terminemos com uma lista ordenada:
+	
+	\begin{center}
+		\includegraphics[width=6cm]{imagens/C2_resultado_ordenacao_selecao_musicas}
+	\end{center}
+	
+	Agora, vamos analisar o tempo de execução disso. Para encontrar o artista com maior número de plays, você precisaria verificar cada item da lista. Isso tem tempo de execução de O(n), sendo assim, temos uma operação com o tempo de execução de O(n) que precisa ser repetida n vezes \\ 
+	
+	A ordenação por seleção é um algoritmo bom, mas não é muito rápido. O quicksort é um algoritmo de ordenação mais rápido, que tem tempo de execução de apenas O($n\log_{n}$) e será falado no capítulo 4.
+	
+	\subsection{Exemplo de código: Ordenação por seleção}
+	
+	Agora, veremos um exemplo de código do algoritmo de ordenação por seleção para ordenar um array do menor para o maior. \\
+	
+	Começaremos escrevendo uma função para encontrar o menor elemento em um array
+	
 	\section{Recapitulando}
 	
 	
