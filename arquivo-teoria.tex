@@ -549,7 +549,7 @@
 		\includegraphics[width=6cm]{imagens/C2_resultado_ordenacao_selecao_musicas}
 	\end{center}
 	
-	Agora, vamos analisar o tempo de execução disso. Para encontrar o artista com maior número de plays, você precisaria verificar cada item da lista. Isso tem tempo de execução de O(n), sendo assim, temos uma operação com o tempo de execução de O(n) que precisa ser repetida n vezes \\ 
+	Agora, vamos analisar o tempo de execução disso. Para encontrar o artista com maior número de plays, você precisaria verificar cada item da lista. Isso tem tempo de execução de O(n). A questão é que conforme verificamos os elementos da lista, vão sobrando cada vez menos elementos, então na primeira passada, por exemplo temos $n$, depois demos $n - 1$, $n - 2$.. até sobrar somente 1 elemento na lista para passar. Isso é uma progressão arimética, onde o resultado é: $n*(n -1)/2$. Quando resolvemos esse resultado, chegaremos em $(n² - n)/2$. Se tratando da notação Big-O, vamos ignorar o $-n$ e o $1/2$, restando apenas $n²$  \\
 	
 	A ordenação por seleção é um algoritmo bom, mas não é muito rápido. O quicksort é um algoritmo de ordenação mais rápido, que tem tempo de execução de apenas O($n\log_{n}$) e será falado no capítulo 4.
 	
@@ -557,7 +557,44 @@
 	
 	Agora, veremos um exemplo de código do algoritmo de ordenação por seleção para ordenar um array do menor para o maior. \\
 	
-	Começaremos escrevendo uma função para encontrar o menor elemento em um array
+	Começaremos escrevendo uma função para encontrar o menor elemento em um array:
+	
+	\begin{verbatim}
+		def buscaMenor(arr):
+			
+			menor = arr[0]
+			menor_indice = 0
+			
+			for i in range(1, len(arr)):
+				
+				if arr[i] < menor:
+					menor = arr[i]
+					menor_indice = i
+			
+			return menor_indice
+				
+	\end{verbatim}
+	
+	Acima o que acontece é que antes do loop ele pega o elemento de indice 0 como menor elemento (mesmo sem saber se é ou não) só para ter algum valor para realizar as comparações e assim encontrar o menor elemento de fato
+	
+	Agora vamos para a aplicação do algoritmo de fato
+	
+	\begin{verbatim}
+		def ordenacaoporSelecao(arr):
+		
+			novoArr = []
+		
+			for i in range(len(arr)):
+				menor = buscaMenor(arr)
+				novoArr.append(arr.pop(menor))
+			
+			return novoArr
+		
+		print(ordenacaoporSelecao([5, 3, 6, 2, 10])
+		
+	\end{verbatim}
+	
+	O que acontece como podemos ver acima é que
 	
 	\section{Recapitulando}
 	
