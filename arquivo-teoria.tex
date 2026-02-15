@@ -575,7 +575,7 @@
 				
 	\end{verbatim}
 	
-	Acima o que acontece é que antes do loop ele pega o elemento de indice 0 como menor elemento (mesmo sem saber se é ou não) só para ter algum valor para realizar as comparações e assim encontrar o menor elemento de fato
+	Acima o que acontece é que antes do loop, ele pega o elemento de indice 0 como menor elemento e salva seu indice também (mesmo sem saber se é o menor elemento mesmo ou não) só para ter algum valor base. A partir disso, ele pega a partir do indice 1 e vai verificando cada elemento. Se o elemento for menor que o elemento de indice 0, ele atribui o menor elemento como sendo ele e também salva seu indice, aí ele vai fazendo isso até encontrar o menor de fato. Terminado esse processo, ele retorna o indice do menor elemento. \\
 	
 	Agora vamos para a aplicação do algoritmo de fato
 	
@@ -589,16 +589,33 @@
 				novoArr.append(arr.pop(menor))
 			
 			return novoArr
-		
-		print(ordenacaoporSelecao([5, 3, 6, 2, 10])
-		
 	\end{verbatim}
 	
-	O que acontece como podemos ver acima é que
+	O que acontece como podemos ver acima é que ele primeiro cria o novo array vazio. Depois, disso, ele utiliza um loop for utilizando a função len juntamente do array, o que faz com que todos ele faça o processo de acordo com a quantidade de elementos no array. Nesse processo que ele vai fazer, utiliza-se a função buscaMenor que como vimos anteriormente nos retorna o indice do menor elemento do array. Feito isso, o menor elemento é tirado do array antigo e adicionado em nosso novo array. Esse processo se repete até que todos os elementos estejam presentes no novo array, agora de forma ordenada.
 	
 	\section{Recapitulando}
 	
+	Ao longo desse capítulo, vimos muitas coisas, sendo elas:
 	
+	\begin{itemize}
+		\item Vimos a respeito da memória, como ela funciona
+		\item Vimos sobre arrays e listas encadeadas, destacando como ocorre o funcionamento de cada uma dessas estruturas de dados na memória. Além disso, abordamos suas vantagens e desvantagens olhando para as operações básicas
+		\item Abordamos o algoritmo de ordenação por seleção
+	\end{itemize}
+	
+	\chapter{Recursão}
+	
+	\section{Sobre a recursão}
+	
+	\section{Caso base e caso recursivo}
+	
+	\section{A pilha}
+	
+	\subsection{A pilha de chamada}
+	
+	\subsection{A pilha de chamada com recursão}
+	
+	\section{Recapitulando}
 	
 	
 	
